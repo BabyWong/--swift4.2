@@ -87,12 +87,12 @@ class ShopCartViewController: BaseViewController {
     
     // MARK - Add Notification KVO Action
     fileprivate func addNSNotification() {
-        NotificationCenter.default.addObserver(self, selector: Selector(("shopCarProductsDidRemove")), name: NSNotification.Name(rawValue: LFBShopCarDidRemoveProductNSNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ShopCartViewController.shopCarProductsDidRemove), name: NSNotification.Name(rawValue: LFBShopCarDidRemoveProductNSNotification), object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: Selector(("shopCarBuyPriceDidChange")), name: NSNotification.Name(rawValue: LFBShopCarBuyPriceDidChangeNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ShopCartViewController.shopCarBuyPriceDidChange), name: NSNotification.Name(rawValue: LFBShopCarBuyPriceDidChangeNotification), object: nil)
     }
     
-    func shopCarProductsDidRemove() {
+    @objc func shopCarProductsDidRemove() {
         
         if UserShopCarTool.sharedUserShopCar.isEmpty() {
             showshopCarEmptyUI()
@@ -101,7 +101,7 @@ class ShopCartViewController: BaseViewController {
         self.supermarketTableView.reloadData()
     }
     
-    func shopCarBuyPriceDidChange() {
+    @objc func shopCarBuyPriceDidChange() {
         tableFooterView.priceLabel.text = UserShopCarTool.sharedUserShopCar.getAllProductsPrice()
     }
     

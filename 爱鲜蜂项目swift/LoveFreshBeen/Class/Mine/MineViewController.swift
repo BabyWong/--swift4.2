@@ -48,11 +48,11 @@ class MineViewController: BaseViewController {
         }()
     
     // MARK:- view life circle
-    override func loadView() {
-        super.loadView()
-        
-        self.navigationController?.navigationBar.isHidden = true
-    }
+//    override func loadView() {
+//        super.loadView()
+//
+//        self.navigationController?.navigationBar.isHidden = true
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
