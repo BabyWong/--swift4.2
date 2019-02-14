@@ -53,11 +53,8 @@ class HomeViewController: SelectedAdressViewController {
         super.viewDidLoad()
         
         addHomeNotification()
-        
         buildCollectionView()
-        
         buildTableHeadView()
-        
         buildProessHud()
     }
     
@@ -253,9 +250,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         if (indexPath as NSIndexPath).section == 0 {
             itemSize = CGSize(width: ScreenWidth - HomeCollectionViewCellMargin * 2, height: 140)
         } else if (indexPath as NSIndexPath).section == 1 {
-            itemSize = CGSize(width: (ScreenWidth - HomeCollectionViewCellMargin * 2) * 0.5 - 4, height: 250)
+            itemSize = CGSize(width: (ScreenWidth - HomeCollectionViewCellMargin * 2) * 0.5 - 4, height: 280)//250
         }
-        
         return itemSize
     }
     
